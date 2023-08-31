@@ -19,8 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1', routes);
-app.use('/api/v1/auth/signup', UserController.createUser);
-app.use(
+app.post('/api/v1/auth/signup', UserController.createUser);
+app.get(
   '/api/v1/profile',
   auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.CUSTOMER),
   UserController.userProfile
