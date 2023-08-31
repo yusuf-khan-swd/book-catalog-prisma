@@ -5,6 +5,7 @@ import globalErrorHandler from './app/middleware/globalErrorHandler';
 import routes from './app/routes';
 
 import cookieParser from 'cookie-parser';
+import { UserController } from './app/modules/user/user.controller';
 
 const app: Application = express();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1', routes);
+app.use('/api/v1/auth/signup', UserController.createUser);
 
 //global error handler
 app.use(globalErrorHandler);
