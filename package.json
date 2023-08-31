@@ -1,7 +1,7 @@
 {
   "name": "book-catalog-prisma",
   "version": "1.0.0",
-  "description": "- api/v1/auth/signup (POST)\r - api/v1/users (GET)\r - api/v1/users/6177a5b87d32123f08d2f5d4 (Single GET) Include an id that is saved in your database\r - api/v1/users/6177a5b87d32123f08d2f5d4 (PATCH)\r - api/v1/users/6177a5b87d32123f08d2f5d4 (DELETE) Include an id that is saved in your database\r - api/v1/profile (GET)",
+  "description": "A backend micro service created using prisma and postgresql",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
