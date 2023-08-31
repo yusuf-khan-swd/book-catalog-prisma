@@ -5,7 +5,9 @@ import globalErrorHandler from './app/middleware/globalErrorHandler';
 import routes from './app/routes';
 
 import cookieParser from 'cookie-parser';
+import auth from './app/middleware/auth';
 import { UserController } from './app/modules/user/user.controller';
+import { ENUM_USER_ROLE } from './enums/user';
 
 const app: Application = express();
 
@@ -18,6 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1', routes);
 app.use('/api/v1/auth/signup', UserController.createUser);
+app.use(
+  '/api/v1/profile',
+  auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.CUSTOMER),
+  UserController.userProfile
+);
 
 //global error handler
 app.use(globalErrorHandler);
