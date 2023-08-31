@@ -31,10 +31,17 @@ const deleteUser = async (id: string): Promise<User | null> => {
   return await prisma.user.delete({ where: { id } });
 };
 
+const userProfile = async (id: string): Promise<User | null> => {
+  return await prisma.user.findUnique({
+    where: { id },
+  });
+};
+
 export const UserService = {
   createUser,
   getAllUsers,
   getSingleUser,
   updateUser,
   deleteUser,
+  userProfile,
 };
