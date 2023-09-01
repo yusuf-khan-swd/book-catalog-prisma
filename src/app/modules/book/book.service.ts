@@ -1,4 +1,4 @@
-import { Book } from '@prisma/client';
+import { Book, Category } from '@prisma/client';
 import prisma from '../../../shared/prisma';
 
 const createBook = async (data: Book): Promise<Book> => {
@@ -29,10 +29,18 @@ const deleteBook = async (id: string): Promise<Book | null> => {
   return await prisma.book.delete({ where: { id } });
 };
 
+const getBooksByCategory = async (id: string): Promise<Category | null> => {
+  return await prisma.category.findUnique({
+    where: { id },
+    include: { books: true },
+  });
+};
+
 export const BookService = {
   createBook,
   getAllBooks,
   getSingleBook,
   updateBook,
   deleteBook,
+  getBooksByCategory,
 };
