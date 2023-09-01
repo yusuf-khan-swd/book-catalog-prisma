@@ -5,6 +5,7 @@
 #### User
 
 - api/v1/auth/signup (POST)
+- /api/v1/auth/signin (POST)
 - api/v1/users (GET)
 - api/v1/users/ad1fea33-51ba-40c4-b781-f0d81b1a37fb (Single GET) Include an id that is saved in your database
 - api/v1/users/ad1fea33-51ba-40c4-b781-f0d81b1a37fb (PATCH)
@@ -23,7 +24,7 @@
 
 - api/v1/books/create-book (POST)
 - api/v1/books (GET)
-- api/v1/books/:categoryId (GET)
+- api/v1/books/:categoryId/category (GET)
 - api/v1/books/c65f5e41-d2d7-42aa-9dc7-1eea176a0acc (GET)
 - api/v1/books/c65f5e41-d2d7-42aa-9dc7-1eea176a0acc (PATCH)
 - api/v1/books/885242f0-64ce-43b2-87d5-ca0c35210458 (DELETE)
