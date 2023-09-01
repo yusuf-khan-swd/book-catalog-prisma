@@ -24,9 +24,9 @@
 - api/v1/books/create-book (POST)
 - api/v1/books (GET)
 - api/v1/books/:categoryId (GET)
-- api/v1/books/:id (GET)
-- api/v1/books/:id (PATCH)
-- api/v1/books/:id (DELETE)
+- api/v1/books/c65f5e41-d2d7-42aa-9dc7-1eea176a0acc (GET)
+- api/v1/books/c65f5e41-d2d7-42aa-9dc7-1eea176a0acc (PATCH)
+- api/v1/books/885242f0-64ce-43b2-87d5-ca0c35210458 (DELETE)
 
 ### Orders
 
