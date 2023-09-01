@@ -12,6 +12,7 @@ const getAllCategories = async (): Promise<Category[]> => {
 const getSingleCategory = async (id: string): Promise<Category | null> => {
   return await prisma.category.findUnique({
     where: { id },
+    include: { books: true },
   });
 };
 
