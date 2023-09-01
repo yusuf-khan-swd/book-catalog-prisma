@@ -77,10 +77,10 @@ const getBooksByCategory = catchAsync(async (req: Request, res: Response) => {
 });
 
 export const BookController = {
-  createBook: createBook,
-  getAllBooks: getAllBooks,
-  getSingleBook: getSingleBook,
-  updateBook: updateBook,
-  deleteBook: deleteBook,
+  createBook,
+  getAllBooks,
+  getSingleBook,
+  updateBook,
+  deleteBook,
   getBooksByCategory,
 };
