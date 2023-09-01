@@ -29,6 +29,20 @@ const getAllOrders = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getAllOrdersForCustomer = catchAsync(
+  async (req: Request, res: Response) => {
+    const userId = req.user?.userId;
+    const result = await OrderService.getAllOrdersForCustomer(userId);
+
+    sendResponse(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Get all categories successfully',
+      data: result,
+    });
+  }
+);
+
 const getSingleOrder = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
   const result = await OrderService.getSingleOrder(id);
@@ -44,5 +58,6 @@ const getSingleOrder = catchAsync(async (req: Request, res: Response) => {
 export const OrderController = {
   createOrder,
   getAllOrders,
+  getAllOrdersForCustomer,
   getSingleOrder,
 };
