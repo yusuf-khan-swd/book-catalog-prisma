@@ -1,7 +1,10 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
+import { paginationFields } from '../../../constants/pagination';
 import catchAsync from '../../../shared/catchAsync';
+import pick from '../../../shared/pick';
 import sendResponse from '../../../shared/sendResponse';
+import { BookFilterableFields } from './book.constant';
 import { BookService } from './book.service';
 
 const createBook = catchAsync(async (req: Request, res: Response) => {
@@ -17,7 +20,10 @@ const createBook = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getAllBooks = catchAsync(async (req: Request, res: Response) => {
-  const result = await BookService.getAllBooks();
+  const filters = pick(req.query, BookFilterableFields);
+  const options = pick(req.query, paginationFields);
+
+  const result = await BookService.getAllBooks(filters, options);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
