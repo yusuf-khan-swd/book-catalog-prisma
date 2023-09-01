@@ -17,10 +17,21 @@ const getAllOrdersForCustomer = async (userId: string): Promise<Order[]> => {
   });
 };
 
-const getSingleOrder = async (id: string): Promise<Order | null> => {
-  return await prisma.order.findUnique({
-    where: { id },
-  });
+const getSingleOrder = async (
+  id: string,
+  user: any
+): Promise<Order | null | undefined> => {
+  if (user.role === 'admin') {
+    return await prisma.order.findUnique({
+      where: { id },
+    });
+  }
+
+  if (user.role === 'customer') {
+    return await prisma.order.findUnique({
+      where: { userId: user.userId, id },
+    });
+  }
 };
 export const OrderService = {
   createOrder,
