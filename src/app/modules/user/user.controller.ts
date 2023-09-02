@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
+import config from '../../../config';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import { UserService } from './user.service';
@@ -13,6 +14,27 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
     success: true,
     message: 'User created successfully',
     data: result,
+  });
+});
+
+const loginUser = catchAsync(async (req: Request, res: Response) => {
+  const data = req.body;
+  const result = await UserService.loginUser(data);
+  const { refreshToken, ...others } = result;
+
+  // set refresh token into cookie
+  const cookieOptions = {
+    secure: config.env === 'production',
+    httpOnly: true,
+  };
+
+  res.cookie('refreshToken', refreshToken, cookieOptions);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User logged in successfully',
+    data: others,
   });
 });
 
@@ -83,4 +105,5 @@ export const UserController = {
   updateUser,
   deleteUser,
   userProfile,
+  loginUser,
 };
