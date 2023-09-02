@@ -3,7 +3,11 @@ import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import prisma from '../../../shared/prisma';
-import { BookSearchableFields } from './book.constant';
+import {
+  BookSearchableFields,
+  bookRelationalFields,
+  bookRelationalFieldsMapper,
+} from './book.constant';
 import { IBookFilters } from './book.interface';
 
 const createBook = async (data: Book): Promise<Book> => {
@@ -56,11 +60,21 @@ const getAllBooks = async (
 
   if (Object.keys(filterData).length > 0) {
     andConditions.push({
-      AND: Object.keys(filterData).map(key => ({
-        [key]: {
-          equals: (filterData as any)[key],
-        },
-      })),
+      AND: Object.keys(filterData).map(key => {
+        if (bookRelationalFields.includes(key)) {
+          return {
+            [bookRelationalFieldsMapper[key]]: {
+              id: (filterData as any)[key],
+            },
+          };
+        } else {
+          return {
+            [key]: {
+              equals: (filterData as any)[key],
+            },
+          };
+        }
+      }),
     });
   }
 
