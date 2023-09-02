@@ -22,7 +22,7 @@ customer_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY3VzdG9tZXIiLCJ1
 - api/v1/categories (GET)
 - api/v1/categories/bc4beb7e-8756-41d8-92ae-9c36d13b5540 (Single GET) Include an id that is saved in your database
 - api/v1/categories/bc4beb7e-8756-41d8-92ae-9c36d13b5540 (PATCH)
-- api/v1/categories/baa17911-c8f2-4937-9459-36f199fdc219 (DELETE) Include an id that is saved in your database
+- api/v1/categories/7dd3b045-8fc4-43ee-8dbf-b315de27ba92 (DELETE) Include an id that is saved in your database
 
 ### Books
 
