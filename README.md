@@ -1,11 +1,11 @@
-### Live Link: https://example.com
+### Live Link: [Book Catalog Prisma](https://book-catalog-prisma.vercel.app)
 
 ### Application Routes:
 
 #### User
 
 - api/v1/auth/signup (POST)
-- /api/v1/auth/signin (POST)
+- api/v1/auth/signin (POST)
 - api/v1/users (GET)
 - api/v1/users/ad1fea33-51ba-40c4-b781-f0d81b1a37fb (Single GET) Include an id that is saved in your database
 - api/v1/users/ad1fea33-51ba-40c4-b781-f0d81b1a37fb (PATCH)
