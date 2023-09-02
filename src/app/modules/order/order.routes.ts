@@ -17,7 +17,11 @@ router.get(
   OrderController.getAllOrdersForCustomer
 );
 
-router.get('/', auth(ENUM_USER_ROLE.ADMIN), OrderController.getAllOrders);
+router.get(
+  '/',
+  auth(ENUM_USER_ROLE.ADMIN),
+  OrderController.getAllOrdersForAdmin
+);
 
 router.get(
   '/:id',

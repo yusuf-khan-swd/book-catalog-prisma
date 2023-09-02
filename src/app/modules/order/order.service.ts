@@ -5,7 +5,7 @@ const createOrder = async (data: any): Promise<Order> => {
   return await prisma.order.create({ data });
 };
 
-const getAllOrders = async (): Promise<Order[]> => {
+const getAllOrdersForAdmin = async (): Promise<Order[]> => {
   return await prisma.order.findMany();
 };
 
@@ -35,7 +35,7 @@ const getSingleOrder = async (
 };
 export const OrderService = {
   createOrder,
-  getAllOrders,
+  getAllOrdersForAdmin,
   getAllOrdersForCustomer,
   getSingleOrder,
 };
