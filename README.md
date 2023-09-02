@@ -28,10 +28,10 @@ customer_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY3VzdG9tZXIiLCJ1
 
 - api/v1/books/create-book (POST)
 - api/v1/books (GET)
-- api/v1/books/8eb51bd6-8456-4ee5-a80d-0f0c632bb85b/category (GET)
-- api/v1/books/c65f5e41-d2d7-42aa-9dc7-1eea176a0acc (GET)
-- api/v1/books/c65f5e41-d2d7-42aa-9dc7-1eea176a0acc (PATCH)
-- api/v1/books/885242f0-64ce-43b2-87d5-ca0c35210458 (DELETE)
+- api/v1/books/bc4beb7e-8756-41d8-92ae-9c36d13b5540/category (GET)
+- api/v1/books/45e5d21d-e115-4a55-a3ac-a4da01e2b25c (GET)
+- api/v1/books/45e5d21d-e115-4a55-a3ac-a4da01e2b25c (PATCH)
+- api/v1/books/1be009bb-911e-4763-805b-84f6788ade4f (DELETE)
 
 ### Orders
 
