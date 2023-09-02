@@ -4,6 +4,10 @@
 
 #### User
 
+```
+customer_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VySWQiOiJiODAyMTUwNi00YTY2LTRjYjItYTU3MS1kYTkxMDAxMjA3ZjkifQ.HijylmDoZzu54WTTwzcMIj7YJ6qkDxEy4tSHrjAIBus
+```
+
 - api/v1/auth/signup (POST)
 - api/v1/auth/signin (POST)
 - api/v1/users (GET)
