@@ -12,7 +12,7 @@ const createReviewAndRating = catchAsync(
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Category created successfully',
+      message: 'Review created successfully',
       data: result,
     });
   }
@@ -25,7 +25,7 @@ const getAllReviewAndRatings = catchAsync(
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Get all categories successfully',
+      message: 'Get all Review successfully',
       data: result,
     });
   }
@@ -39,7 +39,7 @@ const getSingleReviewAndRating = catchAsync(
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Get single category successfully',
+      message: 'Get single Review successfully',
       data: result,
     });
   }
@@ -54,7 +54,7 @@ const updateReviewAndRating = catchAsync(
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Category updated successfully',
+      message: 'Review updated successfully',
       data: result,
     });
   }
@@ -68,7 +68,7 @@ const deleteReviewAndRating = catchAsync(
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Category deleted successfully',
+      message: 'Review deleted successfully',
       data: result,
     });
   }
