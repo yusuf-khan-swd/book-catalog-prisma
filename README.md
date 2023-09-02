@@ -37,4 +37,4 @@ customer_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY3VzdG9tZXIiLCJ1
 
 - api/v1/orders/create-order (POST)
 - api/v1/orders (GET)
-- api/v1/orders/ddae912b-41b1-4d93-9ec3-6925c57b75da (GET)
+- api/v1/orders/eef038f2-3011-45ba-b9d8-188753f3465d (GET)
