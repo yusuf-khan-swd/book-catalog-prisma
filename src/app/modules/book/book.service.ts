@@ -22,7 +22,9 @@ const getAllBooks = async (
     paginationHelpers.calculatePagination(options);
 
   const { searchTerm, minPrice, maxPrice, ...filterData } = filters;
-  console.log({ minPrice, maxPrice });
+
+  const numMinPrice = Number(minPrice);
+  const numMaxPrice = Number(maxPrice);
 
   const andConditions = [];
 
@@ -37,26 +39,26 @@ const getAllBooks = async (
     });
   }
 
-  // if (minPrice !== undefined && maxPrice !== undefined) {
-  //   andConditions.push({
-  //     price: {
-  //       $gte: minPrice,
-  //       $lte: maxPrice,
-  //     },
-  //   });
-  // } else if (minPrice !== undefined) {
-  //   andConditions.push({
-  //     price: {
-  //       $gte: minPrice,
-  //     },
-  //   });
-  // } else if (maxPrice !== undefined) {
-  //   andConditions.push({
-  //     price: {
-  //       $lte: maxPrice,
-  //     },
-  //   });
-  // }
+  if (minPrice !== undefined && maxPrice !== undefined) {
+    andConditions.push({
+      price: {
+        gte: numMinPrice,
+        lte: numMaxPrice,
+      },
+    });
+  } else if (minPrice !== undefined) {
+    andConditions.push({
+      price: {
+        gte: numMinPrice,
+      },
+    });
+  } else if (maxPrice !== undefined) {
+    andConditions.push({
+      price: {
+        lte: numMaxPrice,
+      },
+    });
+  }
 
   if (Object.keys(filterData).length > 0) {
     andConditions.push({
