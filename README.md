@@ -7,9 +7,9 @@
 - api/v1/auth/signup (POST)
 - api/v1/auth/signin (POST)
 - api/v1/users (GET)
-- api/v1/users/ad1fea33-51ba-40c4-b781-f0d81b1a37fb (Single GET) Include an id that is saved in your database
-- api/v1/users/ad1fea33-51ba-40c4-b781-f0d81b1a37fb (PATCH)
-- api/v1/users/13e4fe75-8cbe-4be9-86ec-897d33c40ff9 (DELETE) Include an id that is saved in your database
+- api/v1/users/b8021506-4a66-4cb2-a571-da91001207f9 (Single GET) Include an id that is saved in your database
+- api/v1/users/b8021506-4a66-4cb2-a571-da91001207f9 (PATCH)
+- api/v1/users/34f5eb28-cd83-48c8-a490-b2b22271210f (DELETE) Include an id that is saved in your database
 - api/v1/profile (GET)
 
 ### Category
