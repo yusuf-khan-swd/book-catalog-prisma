@@ -27,6 +27,10 @@ app.get(
   UserController.userProfile
 );
 
+app.get('/', (req, res) => {
+  res.send({ success: true, message: 'Api working' });
+});
+
 //global error handler
 app.use(globalErrorHandler);
 
