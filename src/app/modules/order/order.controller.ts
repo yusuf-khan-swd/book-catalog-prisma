@@ -13,7 +13,19 @@ const createOrder = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Category created successfully',
+    message: 'Created order successfully',
+    data: result,
+  });
+});
+
+const getAllOrders = catchAsync(async (req: Request, res: Response) => {
+  const user = req.user;
+  const result = await OrderService.getAllOrders(user);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Get all orders successfully',
     data: result,
   });
 });
@@ -24,7 +36,7 @@ const getAllOrdersForAdmin = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Get all categories successfully',
+    message: 'Get all orders successfully',
     data: result,
   });
 });
@@ -37,7 +49,7 @@ const getAllOrdersForCustomer = catchAsync(
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Get all categories successfully',
+      message: 'Get all orders successfully',
       data: result,
     });
   }
@@ -52,13 +64,14 @@ const getSingleOrder = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Get single category successfully',
+    message: 'Get single order successfully',
     data: result,
   });
 });
 
 export const OrderController = {
   createOrder,
+  getAllOrders,
   getAllOrdersForAdmin,
   getAllOrdersForCustomer,
   getSingleOrder,
