@@ -20,9 +20,9 @@ customer_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY3VzdG9tZXIiLCJ1
 
 - api/v1/categories/create-category (POST)
 - api/v1/categories (GET)
-- api/v1/categories/8eb51bd6-8456-4ee5-a80d-0f0c632bb85b (Single GET) Include an id that is saved in your database
-- api/v1/categories/8eb51bd6-8456-4ee5-a80d-0f0c632bb85b (PATCH)
-- api/v1/categories/b3cb01af-5cde-4e5f-b89a-50fb55a76d29 (DELETE) Include an id that is saved in your database
+- api/v1/categories/bc4beb7e-8756-41d8-92ae-9c36d13b5540 (Single GET) Include an id that is saved in your database
+- api/v1/categories/bc4beb7e-8756-41d8-92ae-9c36d13b5540 (PATCH)
+- api/v1/categories/baa17911-c8f2-4937-9459-36f199fdc219 (DELETE) Include an id that is saved in your database
 
 ### Books
 
