@@ -11,7 +11,7 @@ import {
 import { IBookFilters } from './book.interface';
 
 const createBook = async (data: Book): Promise<Book> => {
-  return await prisma.book.create({ data });
+  return await prisma.book.create({ data, include: { category: true } });
 };
 
 const getAllBooks = async (
@@ -88,6 +88,7 @@ const getAllBooks = async (
     skip,
     take: limit,
     orderBy: { [sortBy]: sortOrder },
+    include: { category: true },
   });
 
   const total = await prisma.book.count();
@@ -105,6 +106,7 @@ const getAllBooks = async (
 const getSingleBook = async (id: string): Promise<Book | null> => {
   return await prisma.book.findUnique({
     where: { id },
+    include: { category: true },
   });
 };
 
@@ -115,11 +117,15 @@ const updateBook = async (
   return await prisma.book.update({
     where: { id },
     data,
+    include: { category: true },
   });
 };
 
 const deleteBook = async (id: string): Promise<Book | null> => {
-  return await prisma.book.delete({ where: { id } });
+  return await prisma.book.delete({
+    where: { id },
+    include: { category: true },
+  });
 };
 
 const getBooksByCategory = async (id: string): Promise<Category | null> => {
