@@ -1,3 +1,5 @@
+import { Roles } from '@prisma/client';
+
 export type IUserLogin = {
   email: string;
   password: string;
@@ -6,4 +8,14 @@ export type IUserLogin = {
 export type ILoginUserResponse = {
   accessToken: string;
   refreshToken?: string;
+};
+
+export type IUser = {
+  id: string;
+  name: string;
+  email: string;
+  role: Roles;
+  contactNo: string;
+  address: string;
+  profileImg: string;
 };
