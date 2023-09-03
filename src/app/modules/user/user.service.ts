@@ -122,18 +122,9 @@ const deleteUser = async (id: string): Promise<IUser | null> => {
   });
 };
 
-const userProfile = async (id: string): Promise<IUser | null> => {
+const userProfile = async (id: string): Promise<User | null> => {
   return await prisma.user.findUnique({
     where: { id },
-    select: {
-      id: true,
-      name: true,
-      email: true,
-      role: true,
-      contactNo: true,
-      address: true,
-      profileImg: true,
-    },
   });
 };
 
