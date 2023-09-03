@@ -5,11 +5,20 @@ import config from '../../../config';
 import ApiError from '../../../errors/ApiError';
 import { jwtHelpers } from '../../../helpers/jwtHelpers';
 import prisma from '../../../shared/prisma';
-import { ILoginUserResponse, IUserLogin } from './user.interface';
+import { ILoginUserResponse, IUser, IUserLogin } from './user.interface';
 
-const createUser = async (data: User): Promise<User> => {
+const createUser = async (data: User): Promise<IUser> => {
   return await prisma.user.create({
     data,
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      role: true,
+      contactNo: true,
+      address: true,
+      profileImg: true,
+    },
   });
 };
 
@@ -49,33 +58,82 @@ const loginUser = async (data: IUserLogin): Promise<ILoginUserResponse> => {
   };
 };
 
-const getAllUsers = async (): Promise<User[]> => {
-  return await prisma.user.findMany();
+const getAllUsers = async (): Promise<IUser[]> => {
+  const result = await prisma.user.findMany({
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      role: true,
+      contactNo: true,
+      address: true,
+      profileImg: true,
+    },
+  });
+  return result;
 };
 
-const getSingleUser = async (id: string): Promise<User | null> => {
+const getSingleUser = async (id: string): Promise<IUser | null> => {
   return await prisma.user.findUnique({
     where: { id },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      role: true,
+      contactNo: true,
+      address: true,
+      profileImg: true,
+    },
   });
 };
 
 const updateUser = async (
   id: string,
   data: Partial<User>
-): Promise<User | null> => {
+): Promise<IUser | null> => {
   return await prisma.user.update({
     where: { id },
     data,
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      role: true,
+      contactNo: true,
+      address: true,
+      profileImg: true,
+    },
   });
 };
 
-const deleteUser = async (id: string): Promise<User | null> => {
-  return await prisma.user.delete({ where: { id } });
+const deleteUser = async (id: string): Promise<IUser | null> => {
+  return await prisma.user.delete({
+    where: { id },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      role: true,
+      contactNo: true,
+      address: true,
+      profileImg: true,
+    },
+  });
 };
 
-const userProfile = async (id: string): Promise<User | null> => {
+const userProfile = async (id: string): Promise<IUser | null> => {
   return await prisma.user.findUnique({
     where: { id },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      role: true,
+      contactNo: true,
+      address: true,
+      profileImg: true,
+    },
   });
 };
 
