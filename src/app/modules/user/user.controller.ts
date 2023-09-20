@@ -30,11 +30,11 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
 
   res.cookie('refreshToken', refreshToken, cookieOptions);
 
-  sendResponse(res, {
+  res.status(200).send({
     statusCode: httpStatus.OK,
     success: true,
     message: 'User logged in successfully',
-    data: others,
+    token: others,
   });
 });
 
