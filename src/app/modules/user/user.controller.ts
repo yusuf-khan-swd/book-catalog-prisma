@@ -34,7 +34,7 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
     statusCode: httpStatus.OK,
     success: true,
     message: 'User logged in successfully',
-    token: others,
+    token: others.accessToken,
   });
 });
 
